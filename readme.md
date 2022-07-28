@@ -1,0 +1,2 @@
+用rust实现的google系列浏览器解密。主要实现了password、history、cookies的解密
+

